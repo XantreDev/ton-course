@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "compile": "node --import @swc-node/register/esm-register ./scripts/compile.ts"
+    "compile": "node --import @swc-node/register/esm-register ./scripts/compile.ts",
+    "deploy": "node --import @swc-node/register/esm-register ./scripts/deploy.ts",
+    "deploy:mainnet": "cross-env MAINNET=true node --import @swc-node/register/esm-register ./scripts/deploy.ts",
+    "onchain-test": "node --import @swc-node/register/esm-register ./scripts/onchainTest.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,12 +22,17 @@
     "@ton/crypto": "^3.3.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^22.10.5",
+    "cross-env": "^7.0.3",
     "node-inspect-extracted": "^3.0.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
   },
   "dependencies": {
+    "@orbs-network/ton-access": "^2.3.3",
     "@ton/sandbox": "^0.23.0",
-    "@ton/test-utils": "^0.4.2"
+    "@ton/test-utils": "^0.4.2",
+    "@ton/ton": "^15.1.0",
+    "@types/qrcode-terminal": "^0.12.2",
+    "qrcode-terminal": "^0.12.0"
   }
 }
