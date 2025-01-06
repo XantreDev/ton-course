@@ -1,0 +1,30 @@
+{
+  "name": "ton-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "compile": "node --import @swc-node/register/esm-register ./scripts/compile.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@swc-node/register": "^1.10.9",
+    "@swc/core": "^1.10.4",
+    "@ton-community/func-js": "^0.9.0",
+    "@ton/core": "^0.59.1",
+    "@ton/crypto": "^3.3.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^22.10.5",
+    "node-inspect-extracted": "^3.0.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@ton/sandbox": "^0.23.0",
+    "@ton/test-utils": "^0.4.2"
+  }
+}
