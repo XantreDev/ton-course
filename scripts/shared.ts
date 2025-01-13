@@ -12,13 +12,16 @@ const getCodeCell = () => Cell.fromHex(compiledContract.hex);
 export type StateConfig = {
   initialCount: number;
   initialAddress: Address;
+  ownerAddress: Address;
 };
+
 export const getStateInit = (config: StateConfig) =>
   ({
     code: getCodeCell(),
     data: beginCell()
       .storeUint(config.initialCount, 32)
       .storeAddress(config.initialAddress)
+      .storeAddress(config.ownerAddress)
       .endCell(),
   }) satisfies StateInit;
 
